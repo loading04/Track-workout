@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ```
 ## Usage
 ```
-python app.py
+python main.py
 ```
 Open your web browser and visit http://localhost:5000 to access the application.
 
