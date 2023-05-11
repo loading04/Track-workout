@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+
+
+    <h1>My Personal record</h1>
+        <ul>
+
+            {% if prs == [] %}
+                <p>Personal records are empty</p>
+            {% else %}
+
+            {% for pr in prs %}
+                <li>{{pr.exo}} - {{pr.kg}}</li>
+            {% endfor %}
+
+            {% endif %}
+
+        </ul>
+
+
+<a href="{{ url_for('add') }}">Add New Personal record</a>
+</body>
+</html>
