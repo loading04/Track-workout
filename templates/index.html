@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Library</title>
-</head>
-<body>
+{% extends "body.html" %}
 
 
-    <h1>My Personal record</h1>
-        <ul>
+{% block content %}
 
-            {% if prs == [] %}
-                <p>Personal records are empty</p>
-            {% else %}
-
-            {% for pr in prs %}
-                <li>{{pr.exo}} - {{pr.kg}}</li>
-            {% endfor %}
-
-            {% endif %}
-
-        </ul>
+<h2 class="fw-bold mb-5">Personal records</h2>
+<div class="row">
 
 
-<a href="{{ url_for('add') }}">Add New Personal record</a>
-</body>
-</html>
+
+{% if prs == [] %}
+<div class="col-md-6 mb-4">
+    <p>Personal records are empty</p>
+</div>
+{% else %}
+
+{% for pr in prs %}
+    <div class="col-md-6 mb-4">
+        <li>{{pr.exo}} - {{pr.kg}}</li>
+    </div>
+{% endfor %}
+
+</div>
+{% endif %}
+
+<a class="btn btn-primary btn-block mb-4" href="{{ url_for('add') }}">Add New Personal record</a>
+
+{% endblock %}
+
+
